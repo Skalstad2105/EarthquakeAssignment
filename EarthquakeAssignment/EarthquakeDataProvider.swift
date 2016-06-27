@@ -14,7 +14,7 @@ class EarthquakeDataProvider : NSObject{
     
     func getEarthquakeData(success: ((Array<Earthquake>!) -> Void)!,fail: ((NSError!) -> Void)!) -> AnyObject{
         
-        return Alamofire.request(.GET,"http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojson").responseJSON(completionHandler: {(response) -> Void in
+        return Alamofire.request(.GET,"http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson").responseJSON(completionHandler: {(response) -> Void in
             
             let json  = JSON(data: response.data!)
             let features = json["features"].arrayValue

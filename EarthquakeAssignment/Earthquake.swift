@@ -16,7 +16,7 @@ class Earthquake {
     let latitude: Double
     let longitude: Double
     private let timeInSeconds: Double
-    let mag: String
+    let mag: Double
     let place: String
     
     init(json: JSON) {
@@ -24,7 +24,7 @@ class Earthquake {
         self.detail = json["properties"]["detail"].stringValue
         self.latitude = json["geometry"]["coordinates"][1].doubleValue
         self.longitude = json["geometry"]["coordinates"][0].doubleValue
-        self.mag = json["properties"]["mag"].stringValue
+        self.mag = json["properties"]["mag"].doubleValue
         self.place = json["properties"]["place"].stringValue
         self.timeInSeconds = json["properties"]["time"].doubleValue / 1000
     }
