@@ -1,0 +1,6 @@
+framework module Pods_EarthquakeAssignment {
+  umbrella header "Pods-EarthquakeAssignment-umbrella.h"
+
+  export *
+  module * { export * }
+}
