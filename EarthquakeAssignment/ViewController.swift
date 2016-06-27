@@ -18,8 +18,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
         downloadJSON();
     }
 
@@ -42,18 +40,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         return cell
     }
-    
-    
-
 
     func downloadJSON()
     {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-       AppDelegate().earthquakeDataProvider().getEarthquakeData(self._buildAnnotations, fail: self._handleNetworkError)
+       AppDelegate().earthquakeDataProvider().getEarthquakeData(self._buildEarthquakes, fail: self._handleNetworkError)
         })
     }
     
-    private func _buildAnnotations(earthQuakes: Array<Earthquake>!) {
+    private func _buildEarthquakes(earthQuakes: Array<Earthquake>!) {
        
        for quake in earthQuakes
        {

@@ -13,8 +13,8 @@ class Earthquake {
     
     private let json: JSON
     private let detail: String
-    private let latitude: Double
-    private let longitude: Double
+    let latitude: Double
+    let longitude: Double
     private let timeInSeconds: Double
     let mag: String
     let place: String
